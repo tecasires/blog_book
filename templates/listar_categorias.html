@@ -5,12 +5,16 @@
 {% endblock%}
 
 {% block contenido %}
-<br>
-<p>&nbsp;Listar categor&iacute;as</p>
-<br>
-{% for elemento in categorias %}
-    Nombre: {{elemento.nombre}}<br>
-    Descripci&oacute;n: {{elemento.descripcion}}<br>
     <br>
-{% endfor%}
+    <p>&nbsp;Listar categor&iacute;as</p>
+    {% for elemento in categorias %}
+        <div class="card" style="width: 18rem; margin-left: 1rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{elemento.nombre}}</h5>
+            <p class="card-text">{{elemento.descripcion}}</p>
+            </div>
+        </div>
+        <br>
+    {% endfor%}
 {% endblock %}
