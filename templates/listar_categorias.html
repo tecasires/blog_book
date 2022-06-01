@@ -7,4 +7,10 @@
 {% block contenido %}
 <br>
 <p>&nbsp;Listar categor&iacute;as</p>
+<br>
+{% for elemento in categorias %}
+    Nombre: {{elemento.nombre}}<br>
+    Descripci&oacute;n: {{elemento.descripcion}}<br>
+    <br>
+{% endfor%}
 {% endblock %}

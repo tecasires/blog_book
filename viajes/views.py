@@ -9,12 +9,12 @@ def viajes(request):
 
 def listar_viajes(request):
         viajes = Viajes.objects.all()
-        my_context = {'viajes':viajes}
+        my_context = {'viajes': viajes}
         return render(request, 'listar_viajes.html', context=my_context)
 
 def listar_categorias(request):
-        viajes = Categorias.objects.all()
-        my_context = {'viajes':viajes}
+        categorias = Categorias.objects.all()
+        my_context = {'categorias': categorias}
         return render(request, 'listar_categorias.html', context=my_context)
 
 def contacto(request):

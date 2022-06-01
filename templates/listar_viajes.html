@@ -7,4 +7,9 @@
 {% block contenido %}
 <br>
 <p>&nbsp;Listar viajes</p>
+{% for viaje in viajes %}
+    Nombre: {{viaje.nombre}}<br>
+    Descripci&oacute;n: {{viaje.descripcion}}<br>
+    <br>
+{% endfor%}
 {% endblock %}

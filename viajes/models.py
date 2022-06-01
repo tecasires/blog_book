@@ -3,10 +3,11 @@ from django.db import models
 # Create your models here.
 
 class Viajes(models.Model):
-    name = models.CharField(max_length=40)
-    price = models.FloatField()
-    description = models.CharField(max_length=200, blank=True, null=True)
-    SKU = models.CharField(max_length=30, unique=True)
+    nombre = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=200, blank=True, null=True)
+    pais = models.CharField(max_length=40)
+    precio = models.FloatField()
+    EAN = models.CharField(max_length=13, unique=True)
     active = models.BooleanField(default=True)
 
     class Meta:
@@ -15,8 +16,8 @@ class Viajes(models.Model):
 
 
 class Categorias(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'categoria'
