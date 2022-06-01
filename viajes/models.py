@@ -13,6 +13,9 @@ class Viajes(models.Model):
     class Meta:
         verbose_name = 'viaje'
         verbose_name_plural = 'viajes'
+        
+    def __str__(self):
+        return self.nombre + " | " + self.pais + " | " + self.EAN + " | " + str(self.precio)
 
 
 class Categorias(models.Model):
@@ -22,3 +25,6 @@ class Categorias(models.Model):
     class Meta:
         verbose_name = 'categoria'
         verbose_name_plural = 'categorias'
+    
+    def __str__(self):
+        return self.nombre + " | " + self.descripcion
