@@ -13,7 +13,7 @@ class Travels(models.Model):
         verbose_name_plural = 'travels'
         
     def __str__(self):
-        return self.name + " | " + self.country + " | " + self.EAN + " | " + str(self.price)
+        return self.name + " | " + self.country + " | " + self.EAN + " | " + str(self.price) + " | " + self.active
 
 
 class Categories(models.Model):
