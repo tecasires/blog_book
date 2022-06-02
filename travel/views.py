@@ -15,5 +15,8 @@ def travel_list(request):
     context = {'travels': travels}
     return render(request, 'travel-list.html', context = context)
 
+def travel_create(request):
+    return render(request, 'travel-create.html')
+
 def contact(request):
     return render(request, 'contact.html')
