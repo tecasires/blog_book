@@ -18,7 +18,7 @@ from xml.etree.ElementInclude import include
 from django import views
 from django.contrib import admin
 from django.urls import path, include
-from agencia_viajes.views import index, my_base, my_view 
+from travel_agency.views import index, my_base, my_view 
 
 urlpatterns = [
     path('', index),
