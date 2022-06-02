@@ -1,9 +1,8 @@
-# Proyecto agencia viajes
-
+# Proyecto Travel Agency
 
 ## Descarga
     Desde una consola o el bash de git usar el siguiente comando
-        git clone https://github.com/tecasires/django_base.git
+        git clone https://github.com/tecasires/travel_agency.git
 
 
 ## Instalacion:
