@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Listar Viajes
+{% endblock%}
+
+{% block contenido %}
+  <br>
+  <p>&nbsp;Listar viajes</p>
+  {% for viaje in viajes %}
+    <div class="card" style="width: 18rem; margin-left: 1rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{viaje.nombre}}</h5>
+        <p class="card-text">{{viaje.descripcion}}</p>
+        <a href="#" class="btn btn-primary">{{viaje.precio}}}</a>
+      </div>
+    </div>
+    <br>
+  {% endfor%}
+{% endblock %}
