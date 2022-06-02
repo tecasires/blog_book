@@ -9,8 +9,8 @@ class Travels(models.Model):
     active = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = 'viaje'
-        verbose_name_plural = 'viajes'
+        verbose_name = 'travel'
+        verbose_name_plural = 'travels'
         
     def __str__(self):
         return self.name + " | " + self.country + " | " + self.EAN + " | " + str(self.price)
@@ -21,8 +21,8 @@ class Categories(models.Model):
     description = models.CharField(max_length=100)
 
     class Meta:
-        verbose_name = 'categoria'
-        verbose_name_plural = 'categorias'
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
     
     def __str__(self):
         return self.name + " | " + self.description
