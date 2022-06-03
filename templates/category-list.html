@@ -1,20 +1,27 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Listar categorias
+
+  Listar Categorias
+
 {% endblock%}
 
 {% block contenido %}
-<br>
-<p>&nbsp;Listar categor&iacute;as</p>
-{% for elemento in categorias %}
-  <div class="card" style="width: 18rem; margin-left: 1rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{elemento.nombre}}</h5>
-      <p class="card-text">{{elemento.descripcion}}</p>
+  
+  <p>&nbsp;Listar categor&iacute;as</p>
+  
+  {% for elemento in categories %}
+  
+    <div class="card" style="width: 18rem; margin-left: 1rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{elemento.name}}</h5>
+        <p class="card-text">{{elemento.description}}</p>
+        <a href="#" class="btn btn-primary">{{elemento.price}}</a>
+      </div>
     </div>
-  </div>
     <br>
-{% endfor%}
-{% endblock %}
+  
+  {% endfor%}
+
+  {% endblock %}
