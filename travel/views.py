@@ -1,7 +1,5 @@
-from unicodedata import name
 from django.shortcuts import render
 from django.http import HttpResponse
-from numpy import product 
 from travel.models import Categories, Travels
 from travel.forms import Travel_form
 
