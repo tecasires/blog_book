@@ -6,6 +6,7 @@ class Travels(models.Model):
     country = models.CharField(max_length=40)
     price = models.FloatField()
     EAN = models.CharField(max_length=13, unique=True)
+    image = models.ImageField(upload_to =  "Travels", null = True)
     active = models.BooleanField(default=True)
 
     class Meta:

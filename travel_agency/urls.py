@@ -19,6 +19,9 @@ from django import views
 from django.contrib import admin
 from django.urls import path, include
 from travel_agency.views import index, my_base, my_view 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', index),
@@ -27,3 +30,6 @@ urlpatterns = [
     path('view/', my_view),
     path('viajes/', include('travel.urls'))
     ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
