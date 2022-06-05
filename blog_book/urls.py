@@ -18,7 +18,7 @@ from xml.etree.ElementInclude import include
 from django import views
 from django.contrib import admin
 from django.urls import path, include
-from travel_agency.views import index, my_base, my_view 
+from blog_book.views import index, my_base, my_view 
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('my-base/', my_base),
     path('view/', my_view),
-    path('viajes/', include('travel.urls'))
+    path('libros/', include('books.urls'))
     ]
 
 if settings.DEBUG:

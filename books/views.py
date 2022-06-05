@@ -1,22 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from travel.models import Categories, Travels
-from travel.forms import Travel_form
+from books.models import Books, Authors, Editorials, Genres
+from books.forms import Book_form
 
 
-def travel(request):
-    return render(request, 'travel.html')
+def books(request):
+    return render(request, 'books.html')
 
-def category_list(request):
-    categories = Categories.objects.all()
-    context = {'categories': categories}
-    return render(request, 'category-list.html', context = context)
+def books_list(request):
+    books = Books.objects.all()
+    context = {'books': books}
+    return render(request, 'books-list.html', context = context)
 
-def travel_list(request):
-    travels = Travels.objects.all()
-    context = {'travels': travels}
-    return render(request, 'travel-list.html', context = context)
+def authors_list(request):
+    authors = Authors.objects.all()
+    context = {'authors': authors}
+    return render(request, 'authors-list.html', context = context)
 
+def editorials_list(request):
+    editorials = Editorials.objects.all()
+    context = {'editorials': editorials}
+    return render(request, 'editorials-list.html', context = context)
+
+def genres_list(request):
+    genres = Genres.objects.all()
+    context = {'genres': genres}
+    return render(request, 'genres-list.html', context = context)
+
+"""
 def travel_create(request):
     if request.method == 'GET':
         form = Travel_form
@@ -39,6 +50,7 @@ def travel_create(request):
         #print(request.POST)
         return HttpResponse("Viniste por POST")
         
+"""
 
 def contact(request):
     return render(request, 'contact.html')

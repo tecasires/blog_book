@@ -1,5 +1,5 @@
 """
-ASGI config for travel_agency project.
+ASGI config for blog_book project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'travel_agency.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog_book.settings')
 
 application = get_asgi_application()
