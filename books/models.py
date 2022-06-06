@@ -11,8 +11,8 @@ class Books(models.Model):
     ISBN = models.BigIntegerField(primary_key = True)
     title = models.CharField(max_length = 100)
     synopsis = models.CharField(max_length=200, blank = True, null = True)
-    publication_date = models.DateField
-    edition = models.IntegerField
+    publication_date = models.DateField()
+    edition = models.IntegerField()
     price = models.FloatField()
     cover = models.ImageField(upload_to =  "books", null = True)
     active = models.BooleanField(default = True)
@@ -27,10 +27,10 @@ class Books(models.Model):
 
 class Authors(models.Model):
     name = models.CharField(max_length = 50, null = False)
-    middle_name = models.CharField(max_length = 10)
+    middle_name = models.CharField(max_length = 10, blank = True, null = True)
     surname = models.CharField(max_length = 100, null = False)
     nickname = models.CharField(max_length = 25)
-    day_birth = models.DateField
+    day_birth = models.DateField()
     id = models.IntegerField(primary_key = True)
     active = models.BooleanField(default=True)
     
@@ -45,7 +45,7 @@ class Authors(models.Model):
 class Editorials(models.Model):
     name = models.CharField(max_length = 50, null = False)
     founder = models.CharField(max_length = 50, null = False)
-    foundation_date = models.DateField
+    foundation_date = models.DateField()
     country = models.CharField(max_length = 50, null = False)
     main_organization = models.CharField(max_length = 50, null = False)
     id = models.IntegerField(primary_key = True)    
