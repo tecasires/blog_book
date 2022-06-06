@@ -11,21 +11,21 @@
   <br>
   <p>&nbsp;Listar g&eacute;neros</p>
   
-  {% for travel in travels %}
+  {% for genre in genres %}
     
     <div class="card" style="width: 18rem; margin-left: 1rem;">
     <!--<img src="..." class="card-img-top" alt="...">-->
     
-    {% if travel.image %}
+    {% if genre.image %}
       
-      <img src="{{travel.image.url}}" class="card-img-top" alt="...">
+      <img src="{{genre.image.url}}" class="card-img-top" alt="...">
       
     {% endif %}
       
       <div class="card-body">
-        <h5 class="card-title">{{travel.name}}</h5>
-        <p class="card-text">{{travel.description}}</p>
-        <a href="#" class="btn btn-primary">{{travel.price}}</a>
+        <h5 class="card-title">{{genre.name}}</h5>
+        <p class="card-text">{{genre.description}}</p>
+        <a href="#" class="btn btn-primary"></a>
       </div>
     </div>
     <br>

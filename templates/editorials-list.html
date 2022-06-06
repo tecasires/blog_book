@@ -11,21 +11,21 @@
   <br>
   <p>&nbsp;Listar editoriales</p>
   
-  {% for travel in travels %}
+  {% for editorial in editorials %}
     
     <div class="card" style="width: 18rem; margin-left: 1rem;">
     <!--<img src="..." class="card-img-top" alt="...">-->
     
-    {% if travel.image %}
+    {% if editorial.image %}
       
-      <img src="{{travel.image.url}}" class="card-img-top" alt="...">
+      <img src="{{editorial.image.url}}" class="card-img-top" alt="...">
       
     {% endif %}
       
       <div class="card-body">
-        <h5 class="card-title">{{travel.name}}</h5>
-        <p class="card-text">{{travel.description}}</p>
-        <a href="#" class="btn btn-primary">{{travel.price}}</a>
+        <h5 class="card-title">{{editorial.name}}</h5>
+        <p class="card-text">Miembro de: {{editorial.main_organization}}</p>
+        <a href="#" class="btn btn-primary"></a>
       </div>
     </div>
     <br>
