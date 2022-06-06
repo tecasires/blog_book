@@ -39,7 +39,10 @@ class Authors(models.Model):
         verbose_name_plural = 'authors'
         
     def __str__(self):
-        return self.name + " | " + self.middle_name + " | " + self.surname + " | " + str(self.price) + " | " + str(self.active)
+        if self.middle_name == None:
+            return self.name + " | " + self.surname + " | " + " | " + str(self.active)
+        else:
+            return self.name + " | " + self.middle_name + " | " + self.surname + " | " + " | " + str(self.active)
 
 
 class Editorials(models.Model):
