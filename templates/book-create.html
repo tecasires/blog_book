@@ -1,24 +1,29 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Crear viaje
+  
+  Crear libro
+  
 {% endblock%}
 
 {% block contenido %}
-
+  
+  <br>  
+  <p>&nbsp;Crear libro</p>
+  
   {% if form%}
     <br>
-    <p>&nbsp;Crear viaje</p>
+    <p>&nbsp;Crear libros</p>
     <form action="" method="POST">
       {% csrf_token %}
       <table>
-        {{form.as_table}}
+          {{form.as_table}}
       </table>
       <br>
       <input type="submit", value="Enviar">&nbsp;<input type="reset", value="Borrar">
     </form>
-  
-    {% elif new_travel %}
+    
+  {% elif new_travel %}
     <div class="card" style="width: 18rem; margin-left: 1rem;">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
@@ -27,7 +32,7 @@
         <a href="#" class="btn btn-primary">{{new_travel.price}}</a>
       </div>
     </div>
-
-    {% endif%}
-
-  {% endblock %}
+    
+  {% endif%}
+  
+{% endblock %}

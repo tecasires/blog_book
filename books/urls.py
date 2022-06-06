@@ -1,12 +1,16 @@
 from django.urls import path
-from books.views import books, books_list, authors_list, editorials_list, genres_list, contact
+from books.views import books, book_create, books_list, authors_list, author_create, editorials_list, editorial_create,genres_list, genre_create, contact
 
 
 urlpatterns =[
-    path('', books, name = 'book'),
-    path('listar-libros/', books_list, name = 'book_list'),
-    path('listar-autores/', authors_list , name = 'author_list'),
-    path('listar_editoriales', editorials_list, name = 'editorials_list'),
+    path('', books, name = 'books'),
+    path('listar-libros/', books_list, name = 'books_list'),
+    path('crear-libro/', book_create, name = 'book_create'),
+    path('listar-autores/', authors_list, name = 'authors_list'),
+    path('crear-autor/', author_create, name = 'author_create'),
+    path('listar-editoriales', editorials_list, name = 'editorials_list'),
+    path('crear-editorial/', editorial_create, name = 'editorial_create'),
     path('listar-generos/', genres_list, name = 'genres_list'),
+    path('crear-genero/', genre_create, name = 'genre_create'),
     path('contacto/', contact, name = 'contact')
 ]

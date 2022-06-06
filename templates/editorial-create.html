@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+  
+  Crear editorial
+  
+{% endblock%}
+
+{% block contenido %}
+  
+  <br>  
+  <p>&nbsp;Crear editorial</p>
+  
+  {% if form%}
+    <br>
+    <p>&nbsp;Crear libros</p>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <table>
+          {{form.as_table}}
+      </table>
+      <br>
+      <input type="submit", value="Enviar">&nbsp;<input type="reset", value="Borrar">
+    </form>
+    
+  {% elif new_travel %}
+    <div class="card" style="width: 18rem; margin-left: 1rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{new_travel.name}}</h5>
+        <p class="card-text">{{new_travel.description}}</p>
+        <a href="#" class="btn btn-primary">{{new_travel.price}}</a>
+      </div>
+    </div>
+    
+  {% endif%}
+  
+{% endblock %}

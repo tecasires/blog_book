@@ -12,21 +12,40 @@ def books_list(request):
     context = {'books': books}
     return render(request, 'books-list.html', context = context)
 
+def book_create(request):
+    book = Books.objects.all()
+    context = {'book': book}
+    return render(request, 'book-create.html', context = context)
+
 def authors_list(request):
     authors = Authors.objects.all()
     context = {'authors': authors}
     return render(request, 'authors-list.html', context = context)
+
+def author_create(request):
+    author = Authors.objects.all()
+    context = {'author': author}
+    return render(request, 'author-create.html', context = context)
 
 def editorials_list(request):
     editorials = Editorials.objects.all()
     context = {'editorials': editorials}
     return render(request, 'editorials-list.html', context = context)
 
+def editorial_create(request):
+    editorial = Editorials.objects.all()
+    context = {'editorial': editorial}
+    return render(request, 'editorial-create.html', context = context)
+
 def genres_list(request):
     genres = Genres.objects.all()
     context = {'genres': genres}
     return render(request, 'genres-list.html', context = context)
 
+def genre_create(request):
+    genre = Genres.objects.all()
+    context = {'genre': genre}
+    return render(request, 'genre-create.html', context = context)
 """
 def travel_create(request):
     if request.method == 'GET':

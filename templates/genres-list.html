@@ -1,27 +1,35 @@
 {% extends "base.html" %}
 
 {% block title %}
-
-  Listar Categorias
-
+  
+  Listar g&eacute;neros
+  
 {% endblock%}
 
 {% block contenido %}
   
-  <p>&nbsp;Listar categor&iacute;as</p>
+  <br>
+  <p>&nbsp;Listar g&eacute;neros</p>
   
-  {% for elemento in categories %}
-  
+  {% for travel in travels %}
+    
     <div class="card" style="width: 18rem; margin-left: 1rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <!--<img src="..." class="card-img-top" alt="...">-->
+    
+    {% if travel.image %}
+      
+      <img src="{{travel.image.url}}" class="card-img-top" alt="...">
+      
+    {% endif %}
+      
       <div class="card-body">
-        <h5 class="card-title">{{elemento.name}}</h5>
-        <p class="card-text">{{elemento.description}}</p>
-        <a href="#" class="btn btn-primary">{{elemento.price}}</a>
+        <h5 class="card-title">{{travel.name}}</h5>
+        <p class="card-text">{{travel.description}}</p>
+        <a href="#" class="btn btn-primary">{{travel.price}}</a>
       </div>
     </div>
     <br>
-  
+    
   {% endfor%}
-
-  {% endblock %}
+    
+{% endblock %}
