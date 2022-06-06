@@ -24,11 +24,15 @@
       
       <div class="card-body">
         <h5 class="card-title">{{author.name}} 
+          
           {% if author.middle_name %}
-            {{author.surname}}
+            {{author.middle_name}} {{author.surname}}  
+          
           {% else %}
-            {{author.middle_name}} {{author.surname}}
+            {{author.surname}}
+          
           {% endif %}
+
           </h5>
         <p class="card-text">{{author.nickname}}</p>
         <a href="#" class="btn btn-primary"></a>
