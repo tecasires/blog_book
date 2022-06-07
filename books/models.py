@@ -14,7 +14,7 @@ class Books(models.Model):
     publication_date = models.DateField()
     edition = models.IntegerField(blank = True, null = True)
     price = models.FloatField(blank = True, null = True)
-    cover = models.ImageField(upload_to =  "books", blank = True, null = True)
+    cover = models.ImageField(upload_to =  "books", null = True)
     active = models.BooleanField(default = True)
     
     class Meta:

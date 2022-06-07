@@ -10,25 +10,31 @@
   
   <br>
   <p>&nbsp;Listar g&eacute;neros</p>
-  
+
   {% for genre in genres %}
     
-    <div class="card" style="width: 18rem; margin-left: 1rem;">
-    <!--<img src="..." class="card-img-top" alt="...">-->
-    
-    {% if genre.image %}
+  <div class="card" style="width: 18rem; margin-left: 1rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        
+        {{genre.name}}
+        
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        
+        {% if genre.description %}
+        
+          {{genre.description}}  
+
+        {% endif %}
       
-      <img src="{{genre.image.url}}" class="card-img-top" alt="...">
-      
-    {% endif %}
-      
-      <div class="card-body">
-        <h5 class="card-title">{{genre.name}}</h5>
-        <p class="card-text">{{genre.description}}</p>
-        <a href="#" class="btn btn-primary"></a>
-      </div>
+      </h6>
+      <p class="card-text"></p>
+      <a href="#" class="card-link"></a>
+      <a href="#" class="card-link"></a>
     </div>
-    <br>
+  </div>
+  <br>
     
   {% endfor%}
     

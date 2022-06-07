@@ -13,33 +13,31 @@
   
   {% for author in authors %}
     
-    <div class="card" style="width: 18rem; margin-left: 1rem;">
-    <!--<img src="..." class="card-img-top" alt="...">-->
-    
-    {% if author.image %}
+  <div class="card" style="width: 18rem; margin-left: 1rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        
+      {{author.name}}
+        
+      {% if author.middle_name %}
+        
+        {{author.middle_name}} {{author.surname}}  
       
-      <img src="{{author.image.url}}" class="card-img-top" alt="...">
+      {% else %}
+        
+        {{author.surname}}
       
-    {% endif %}
-      
-      <div class="card-body">
-        <h5 class="card-title">{{author.name}} 
-          
-          {% if author.middle_name %}
-            {{author.middle_name}} {{author.surname}}  
-          
-          {% else %}
-            {{author.surname}}
-          
-          {% endif %}
+      {% endif %}
 
-          </h5>
-        <p class="card-text">{{author.nickname}}</p>
-        <a href="#" class="btn btn-primary"></a>
-      </div>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{author.nickname}}</h6>
+      <p class="card-text"></p>
+      <a href="#" class="card-link"></a>
+      <a href="#" class="card-link"></a>
     </div>
-    <br>
-    
+  </div>
+  <br>
+
   {% endfor%}
     
 {% endblock %}

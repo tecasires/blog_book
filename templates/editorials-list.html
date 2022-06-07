@@ -13,22 +13,28 @@
   
   {% for editorial in editorials %}
     
-    <div class="card" style="width: 18rem; margin-left: 1rem;">
-    <!--<img src="..." class="card-img-top" alt="...">-->
-    
-    {% if editorial.image %}
+  <div class="card" style="width: 18rem; margin-left: 1rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        
+        {{editorial.name}}
+        
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        
+        {% if editorial.main_organization %}
+        
+          {{editorial.main_organization}}  
+
+        {% endif %}
       
-      <img src="{{editorial.image.url}}" class="card-img-top" alt="...">
-      
-    {% endif %}
-      
-      <div class="card-body">
-        <h5 class="card-title">{{editorial.name}}</h5>
-        <p class="card-text">Miembro de: {{editorial.main_organization}}</p>
-        <a href="#" class="btn btn-primary"></a>
-      </div>
+      </h6>
+      <p class="card-text"></p>
+      <a href="#" class="card-link"></a>
+      <a href="#" class="card-link"></a>
     </div>
-    <br>
+  </div>
+  <br>
     
   {% endfor%}
     

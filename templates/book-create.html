@@ -11,26 +11,50 @@
   <br>  
   <p>&nbsp;Crear libro</p>
   
-  {% if form%}
-    <br>
-    <p>&nbsp;Crear libros</p>
+  {% if form %}
     <form action="" method="POST">
       {% csrf_token %}
       <table>
-          {{form.as_table}}
+      {{form.as_table}}
       </table>
       <br>
       <input type="submit", value="Enviar">&nbsp;<input type="reset", value="Borrar">
     </form>
     
-  {% elif new_travel %}
-    <div class="card" style="width: 18rem; margin-left: 1rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{new_travel.name}}</h5>
-        <p class="card-text">{{new_travel.description}}</p>
-        <a href="#" class="btn btn-primary">{{new_travel.price}}</a>
-      </div>
+  {% elif new_book %}
+
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card-body">
+      <h5 class="card-title">{{new_book.title}}</h5>
+      <p class="card-text">ISBN: {{new_book.ISBN}}</p>
+      <p class="card-text">{{new_book.synopsis}}</p>
+      <a href="#" class="btn btn-primary">{{new_book.price}}</a>
     </div>
     
   {% endif%}
