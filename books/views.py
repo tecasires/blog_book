@@ -119,13 +119,7 @@ def contact(request):
 
 def books_search(request):
     print(request.GET)
-    return render(request, 'book-search.html')
-    
-    """
-    
-    #product = Products.objects.get()
-    books = Books.objects.filter(name__contains = request.GET['search'])
+    # books = Books.objects.get()
+    books = Books.objects.filter(title__contains = request.GET['search'])
     context = {'books' : books}
     return render(request, 'books-search.html', context = context)
-    """
-    
