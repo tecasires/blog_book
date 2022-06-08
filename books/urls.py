@@ -1,5 +1,5 @@
 from django.urls import path
-from books.views import books, book_create, books_list, authors_list, author_create, editorials_list, editorial_create,genres_list, genre_create, contact
+from books.views import books, book_create, books_list, authors_list, author_create, editorials_list, editorial_create,genres_list, genre_create, book_search, contact
 
 
 urlpatterns =[
@@ -12,5 +12,6 @@ urlpatterns =[
     path('crear-editorial/', editorial_create, name = 'editorial_create'),
     path('listar-generos/', genres_list, name = 'genres_list'),
     path('crear-genero/', genre_create, name = 'genre_create'),
+    path('buscar-libros/', book_search, name = 'book_search'),
     path('contacto/', contact, name = 'contact')
 ]

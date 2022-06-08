@@ -115,3 +115,17 @@ def genre_create(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+def book_search(request):
+    print(request.GET)
+    return render(request, 'book-search.html')
+    
+    """
+    
+    #product = Products.objects.get()
+    books = Books.objects.filter(name__contains = request.GET['search'])
+    context = {'books' : books}
+    return render(request, 'books-search.html', context = context)
+    """
+    
