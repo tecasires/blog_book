@@ -43,9 +43,24 @@ def authors_list(request):
 
 
 def author_create(request):
-    author = Authors.objects.all()
-    context = {'author': author}
-    return render(request, 'author-create.html', context = context)
+    if request.method == 'GET':
+        form = Authors_form()
+        context = {'form' : form}
+        return render(request, 'author-create.html', context=context)
+    else:
+        form = Genres_Form(request.POST)
+        if form.is_valid():
+            new_author = Authors.objects.create(
+                name = form.cleaned_data['name'],
+                middle_name = form.cleaned_data['middle_name'],
+                surname = form.cleaned_data['surname'],
+                nickname = form.cleaned_data['nickname'],
+                day_birth = form.cleaned_data['day_birth'],
+                id = form.cleaned_data['id'],
+                active = form.cleaned_data['active']
+            )
+            context = {'new_author': new_author}
+        return render(request, 'author-create.html', context = context)
 
 
 def editorials_list(request):

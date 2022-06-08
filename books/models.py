@@ -8,7 +8,7 @@ def lownst(text):
 
 
 class Books(models.Model):
-    ISBN = models.BigIntegerField(primary_key = True)
+    isbn = models.BigIntegerField(primary_key = True)
     title = models.CharField(max_length = 100)
     synopsis = models.CharField(max_length=300, blank = True, null = True)
     publication_date = models.DateField()
@@ -29,12 +29,12 @@ class Books(models.Model):
 
 
 class Authors(models.Model):
+    id = models.IntegerField(primary_key = True)
     name = models.CharField(max_length = 50)
     middle_name = models.CharField(max_length = 10, blank = True, null = True)
     surname = models.CharField(max_length = 100)
     nickname = models.CharField(max_length = 25)
     day_birth = models.DateField()
-    id = models.IntegerField(primary_key = True)
     active = models.BooleanField(default = True)
     
     class Meta:
@@ -53,12 +53,13 @@ class Authors(models.Model):
 
 
 class Editorials(models.Model):
+    id = models.IntegerField(primary_key = True)   
     name = models.CharField(max_length = 50)
     founder = models.CharField(max_length = 50, blank = True, null = True)
     foundation_date = models.DateField(blank = True, null = True)
     country = models.CharField(max_length = 50, blank = True, null = True)
     main_organization = models.CharField(max_length = 50, blank = True, null = True)
-    id = models.IntegerField(primary_key = True)    
+    logo = models.ImageField(upload_to =  "logos", null = True)
     active = models.BooleanField(default = True)
     
     class Meta:
@@ -73,9 +74,9 @@ class Editorials(models.Model):
 
 
 class Genres(models.Model):
+    id = models.IntegerField(primary_key = True)  
     name = models.CharField(max_length = 50)
     description = models.CharField(max_length = 100, blank = True, null = True)
-    id = models.IntegerField(primary_key = True)   
     active = models.BooleanField(default = True)
 
     class Meta:

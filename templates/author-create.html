@@ -4,35 +4,65 @@
   
   Crear autor
   
-{% endblock%}
+{% endblock %}
 
 {% block contenido %}
   
   <br>  
   <p>&nbsp;Crear autor</p>
   
-  {% if form%}
-    <br>
-    <p>&nbsp;Crear libros</p>
-    <form action="" method="POST">
-      {% csrf_token %}
-      <table>
-          {{form.as_table}}
-      </table>
-      <br>
-      <input type="submit", value="Enviar">&nbsp;<input type="reset", value="Borrar">
-    </form>
+  {% if form %}
+
+    <table>
+      <tr>
+        <td>&nbsp;</td>
+        <td></td>
+        <td>
+          <form action="" method="POST">
+
+            {% csrf_token %}
+            
+            <table>
+            
+              {{form.as_table}}
+            
+            </table>
+            
+            <br>
+            <input type="submit", value="Enviar">&nbsp;<input type="reset", value="Borrar">
+
+          </form>
+        </td>
+      </tr>
+    </table>
     
-  {% elif new_travel %}
+  {% elif new_author %}
+
     <div class="card" style="width: 18rem; margin-left: 1rem;">
-      <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{new_travel.name}}</h5>
-        <p class="card-text">{{new_travel.description}}</p>
-        <a href="#" class="btn btn-primary">{{new_travel.price}}</a>
+        <h5 class="card-title">
+          
+        {{new_author.name}}
+          
+          {% if new_author.middle_name %}
+          
+            {{new_author.middle_name}} {{new_author.surname}}  
+        
+          {% else %}
+          
+            {{new_author.surname}}
+        
+          {% endif %}
+
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{new_author.nickname}}</h6>
+        <p class="card-text"></p>
+        <a href="#" class="card-link"></a>
+        <a href="#" class="card-link"></a>
       </div>
     </div>
-    
-  {% endif%}
-  
+    <br>
+
+  {% endif %}
+
 {% endblock %}
