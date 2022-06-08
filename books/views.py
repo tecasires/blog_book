@@ -117,7 +117,7 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def book_search(request):
+def books_search(request):
     print(request.GET)
     return render(request, 'book-search.html')
     
