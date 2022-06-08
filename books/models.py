@@ -10,10 +10,10 @@ def lownst(text):
 class Books(models.Model):
     isbn = models.BigIntegerField(primary_key = True)
     title = models.CharField(max_length = 100)
-    synopsis = models.CharField(max_length=300, blank = True, null = True)
     publication_date = models.DateField()
+    price = models.FloatField()
+    synopsis = models.CharField(max_length=300, blank = True, null = True)
     edition = models.IntegerField(blank = True, null = True)
-    price = models.FloatField(blank = True, null = True)
     cover = models.ImageField(upload_to =  "books", null = True)
     active = models.BooleanField(default = True)
     
@@ -25,7 +25,7 @@ class Books(models.Model):
             return self.title
     
     def __str__(self):
-        return str(self.ISBN) + " | " + self.title + " | " + str(self.active)
+        return str(self.isbn) + " | " + self.title + " | " + str(self.active)
 
 
 class Authors(models.Model):
@@ -34,7 +34,7 @@ class Authors(models.Model):
     middle_name = models.CharField(max_length = 10, blank = True, null = True)
     surname = models.CharField(max_length = 100)
     nickname = models.CharField(max_length = 25)
-    day_birth = models.DateField()
+    birthday = models.DateField()
     active = models.BooleanField(default = True)
     
     class Meta:

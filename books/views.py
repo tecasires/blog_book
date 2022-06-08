@@ -24,7 +24,7 @@ def book_create(request):
         form = Books_form(request.POST)
         if form.is_valid():
             new_book = Books.objects.create(
-                ISBN = form.cleaned_data['ISBN'],
+                isbn = form.cleaned_data['isbn'],
                 title = form.cleaned_data['title'],
                 synopsis = form.cleaned_data['synopsis'],
                 publication_date = form.cleaned_data['publication_date'],
@@ -48,15 +48,15 @@ def author_create(request):
         context = {'form' : form}
         return render(request, 'author-create.html', context=context)
     else:
-        form = Genres_Form(request.POST)
+        form = Authors_form(request.POST)
         if form.is_valid():
             new_author = Authors.objects.create(
+                id = form.cleaned_data['id'],
                 name = form.cleaned_data['name'],
                 middle_name = form.cleaned_data['middle_name'],
                 surname = form.cleaned_data['surname'],
                 nickname = form.cleaned_data['nickname'],
-                day_birth = form.cleaned_data['day_birth'],
-                id = form.cleaned_data['id'],
+                birthday = form.cleaned_data['birthday'],
                 active = form.cleaned_data['active']
             )
             context = {'new_author': new_author}
@@ -68,11 +68,25 @@ def editorials_list(request):
     context = {'editorials': editorials}
     return render(request, 'editorials-list.html', context = context)
 
-
 def editorial_create(request):
-    editorial = Editorials.objects.all()
-    context = {'editorial': editorial}
-    return render(request, 'editorial-create.html', context = context)
+    if request.method == 'GET':
+        form = Editorials_form()
+        context = {'form' : form}
+        return render(request, 'editorial-create.html', context = context)
+    else:
+        form = Editorials_form(request.POST)
+        if form.is_valid():
+            new_editorial = Editorials.objects.create(
+                id = form.cleaned_data['id'],
+                name = form.cleaned_data['name'],
+                founder = form.cleaned_data['founder'],
+                foundation_date = form.cleaned_data['foundation_date'],
+                country = form.cleaned_data['country'],
+                main_organization = form.cleaned_data['main_organization'],
+                active = form.cleaned_data['active']
+            )
+            context = {'new_editorial' : new_editorial}
+        return render(request, 'editorial-create.html', context = context)
 
 
 def genres_list(request):
@@ -90,9 +104,9 @@ def genre_create(request):
         form = Genres_Form(request.POST)
         if form.is_valid():
             new_genre = Genres.objects.create(
+                id = form.cleaned_data['id'],
                 name = form.cleaned_data['name'],
                 description = form.cleaned_data['description'],
-                id = form.cleaned_data['id'],
                 active = form.cleaned_data['active']
             )
             context = {'new_genre': new_genre}

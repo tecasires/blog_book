@@ -14,6 +14,13 @@
   {% for editorial in editorials %}
     
   <div class="card" style="width: 18rem; margin-left: 1rem;">
+    
+  {% if editorial.logo %}
+
+    <img src="{{editorial.logo.url}}" class="card-img-top" alt="...">
+    
+  {% endif %}
+        
     <div class="card-body">
       <h5 class="card-title">
         
