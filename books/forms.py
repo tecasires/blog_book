@@ -5,9 +5,9 @@ class Books_form(forms.Form):
     ISBN = forms.IntegerField()
     title = forms.CharField(max_length = 100)
     synopsis = forms.CharField(max_length=300, required = False)
-    publication_date = forms.DateField(required=False)
+    publication_date = forms.DateField()
     edition = forms.IntegerField(required = False)
-    price = forms.FloatField(required=False)
+    price = forms.FloatField(required = False)
     # cover = forms.ImageField(required = False)
     active = forms.BooleanField(required = False, initial = True)
 
