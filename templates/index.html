@@ -1,13 +1,66 @@
 {% extends "base.html" %}
 
 {% block title %}
-  
+
   Inicio
 
 {% endblock%}
 
+{% block more_scripts %}
+
+{% endblock %}
+
 {% block contenido %}
-  <br>
-  <p>&nbsp;Esta es mi p&aacute;gina de inicio</p>
-  
+
+  <div class="container-fluid">
+
+    <div class="carousel slide" data-bs-ride="carousel" id="carousel-1" style="height: 600px">
+    <!-- data-interval="false" data-ride="carousel" data-pause="hover" -->
+      <div class="carousel-inner h-100">
+          <div class="carousel-item active h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="/static/images/home/book-3033196_1280.jpg" alt="Books" style="z-index: -1;">
+              <div class="container d-flex flex-column justify-content-center h-100">
+                  <div class="row">
+                      <div class="col-md-6 col-xl-4 offset-md-2">
+                          <div style="max-width: 350px;">
+                              <h1 class="text-uppercase fw-bold">Siente</h1>
+                              <p class="my-3">R&iacute;e, llora, salta, corre, sube, baja, investiga... Gracias a los libros podr&aacute;s experimentar cualquier tipo de sentimiento!</p><a class="btn btn-primary btn-lg me-2" role="button" href="#">Comedia</a><a class="btn btn-outline-primary btn-lg" role="button" href="#">Drama</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="/static/images/home/sphinx-1175828_1280.jpg" alt="Viaja" style="z-index: -1;">
+              <div class="container d-flex flex-column justify-content-center h-100">
+                  <div class="row">
+                      <div class="col-md-6 col-xl-4 offset-md-2">
+                          <div style="max-width: 350px;">
+                            <h1 class="text-uppercase fw-bold">Viaja</h1>
+                            <p class="my-3">A trav&eacute;s de nuestras historias podr&aacute;s conocer sitios inimaginables, s&iacute;mplemente acomp&aacute;&ntilde;anos en el Viaje!</p><a class="btn btn-primary btn-lg me-2" role="button" href="#">Historia</a><a class="btn btn-outline-primary btn-lg" role="button" href="#">Geograf&iacute;a</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="carousel-item h-100"><img class="w-100 d-block position-absolute h-100 fit-cover" src="/static/images/home/sunset-485016_1280.png" alt="Slide Image" style="z-index: -1;">
+              <div class="container d-flex flex-column justify-content-center h-100">
+                  <div class="row">
+                      <div class="col-md-6 col-xl-4 offset-md-2">
+                          <div style="max-width: 350px;">
+                              <h1 class="text-uppercase fw-bold">Sue&ntilde;a</h1>
+                              <p class="my-3">Los libros tienen el poder de transportarte a cualquier mundo, s&oacute;lo tienes que ¡So&ntilde;ar!</p><a class="btn btn-primary btn-lg me-2" role="button" href="#"> Fantas&iacute;a</a><a class="btn btn-outline-primary btn-lg" role="button" href="#">Infantil</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+      <ol class="carousel-indicators">
+          <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+          <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+      </ol>
+    </div>
+  </div>
+
 {% endblock %}
