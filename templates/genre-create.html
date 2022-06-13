@@ -11,7 +11,7 @@
   <br>  
   <p>&nbsp;Crear g&eacute;nero</p>
   
-  {% if form%}
+  {% if form %}
   
     <form action="" method="POST">
       {% csrf_token %}
@@ -27,14 +27,14 @@
     <div class="card-body">
       <h5 class="card-title">
         
-        {{genre.name}}
+        {{new_genre.name}}
         
       </h5>
       <h6 class="card-subtitle mb-2 text-muted">
         
-        {% if genre.description %}
+        {% if new_genre.description %}
         
-          {{genre.description}}  
+          {{new_genre.description}}  
 
         {% endif %}
       

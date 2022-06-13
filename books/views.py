@@ -38,7 +38,8 @@ def book_create(request):
 
 
 def authors_list(request):
-    authors = Authors.objects.all()
+    # authors = Authors.objects.all()
+    authors = Authors.objects.filter(active = True)
     context = {'authors': authors}
     return render(request, 'authors-list.html', context = context)
 
@@ -65,7 +66,8 @@ def author_create(request):
 
 
 def editorials_list(request):
-    editorials = Editorials.objects.all()
+    # editorials = Editorials.objects.all()
+    editorials = Editorials.objects.filter(active = True)
     context = {'editorials': editorials}
     return render(request, 'editorials-list.html', context = context)
 
@@ -91,7 +93,8 @@ def editorial_create(request):
 
 
 def genres_list(request):
-    genres = Genres.objects.all()
+    # genres = Genres.objects.all()
+    genres = Genres.objects.filter(active = True)
     context = {'genres': genres}
     return render(request, 'genres-list.html', context = context)
 
@@ -121,7 +124,7 @@ def contact(request):
 def books_search(request):
     # print(request.GET)
     # books = Books.objects.get()
-    books = Books.objects.filter(title__contains = request.GET['search'])
+    books = Books.objects.filter(title__contains = request.GET['search'], active = True)
     if books.exists():
         context = {'books' : books}
     else:
