@@ -118,8 +118,12 @@ def contact(request):
 
 
 def books_search(request):
-    print(request.GET)
+    # print(request.GET)
     # books = Books.objects.get()
     books = Books.objects.filter(title__contains = request.GET['search'])
-    context = {'books' : books}
+    if books.exists():
+        context = {'books' : books}
+    else:
+        context = {'errors':'No se encontro el libro'}
+    
     return render(request, 'books-search.html', context = context)
