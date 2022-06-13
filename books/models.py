@@ -8,13 +8,13 @@ def lownst(text):
 
 
 class Books(models.Model):
-    isbn = models.BigIntegerField(primary_key = True)
+    isbn = models.IntegerField(primary_key = True)
     title = models.CharField(max_length = 100)
     publication_date = models.DateField()
     price = models.FloatField()
     synopsis = models.CharField(max_length=300, blank = True, null = True)
     edition = models.IntegerField(blank = True, null = True)
-    cover = models.ImageField(upload_to =  "books", null = True)
+    cover = models.ImageField(upload_to = "books", blank = True)
     active = models.BooleanField(default = True)
     
     class Meta:

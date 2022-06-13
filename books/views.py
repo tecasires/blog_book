@@ -10,7 +10,8 @@ def books(request):
 
 
 def books_list(request):
-    books = Books.objects.all()
+    # books = Books.objects.all()
+    books = Books.objects.filter(active = True)
     context = {'books': books}
     return render(request, 'books-list.html', context = context)
 
